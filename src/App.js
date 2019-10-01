@@ -1,8 +1,10 @@
+const axios = require('axios');
 // export const hello = ()=> 'Hello';
 
 export const suma = (a,b)=> a+b;
 
 export const resta = (a,b)=>a-b;
+
 
 export const functions = ()=>{
   return {
@@ -14,6 +16,9 @@ export const functions = ()=>{
       user['lastName'] ='Traversy';
       return user;
     }
+    fetchUser: ()=>axios.get('https://jsonplaceholder.typicode.com/users/1')
+    .then(res=>res.data)
+    .catch(err=>'error')
   }
 }
 

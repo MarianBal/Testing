@@ -34,9 +34,27 @@ import { suma, resta, functions } from './App'
 // })
 
 
-test('User should be Brad Traversy object', ()=>{
-  expect(functions.createUser()).toEqual({
-    firstName: 'Brad',
-    lastName:'Traversy'
+// test('User should be Brad Traversy object', ()=>{
+//   expect(functions.createUser()).toEqual({
+//     firstName: 'Brad',
+//     lastName:'Traversy'
+//   })
+// })
+
+// test('There is no I in teams', ()=>{
+//   expect('team').not.toMatch(/I/i)
+// })
+
+// test('Admin shoul be in usernams', ()=>{
+//   const usernames = ['John', 'Karen', 'admin'];
+//   expect(usernames).toContain('admin')
+// })
+
+test('user fetch name should be Leanne Graham', ()=>{
+  expect.assertions(1);
+  return functions.fetchUser()
+  .then(data =>{
+    expect(data.name).toEqual('Leanne Graham')
   })
 })
+
