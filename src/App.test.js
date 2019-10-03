@@ -50,11 +50,10 @@ import { suma, resta, functions } from './App'
 //   expect(usernames).toContain('admin')
 // })
 
-test('user fetch name should be Leanne Graham', ()=>{
+test('User fetched name should be Leanne Graham', async () => {
   expect.assertions(1);
-  return functions.fetchUser()
-  .then(data =>{
-    expect(data.name).toEqual('Leanne Graham')
-  })
-})
+  const data = await functions.fetchUser();
+  expect(data.name).toEqual('Leanne Graham');
+});
+
 
